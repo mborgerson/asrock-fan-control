@@ -1,0 +1,14 @@
+[Unit]
+Description=Manage chassis fans
+After=network.target
+
+[Service]
+StartLimitIntervalSec=0[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/python /opt/fan-manager.py
+
+[Install]
+WantedBy=multi-user.target
